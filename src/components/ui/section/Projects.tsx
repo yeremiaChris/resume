@@ -17,6 +17,24 @@ const projects = [
     image: "/projects/primacare.png",
     link: "https://rm.primacare.ai",
   },
+  {
+    name: "Flou Cloud",
+    description: `I developed this website using Nuxt.js and Tailwind CSS. It features custom HTML and various forms for posting information about a range of cloud system products.`,
+    link: "https://floucloud.id/",
+    image: "/projects/flou-cloud.png",
+  },
+  {
+    name: "Fastr",
+    description: `I developed this web application using Nuxt.js and Tailwind CSS. It is designed for scraping social media information from platforms like Instagram and TikTok. The application features various charts that display metrics such as account growth, followers, posts, and more.`,
+    link: "https://fastr.id/",
+    image: "/projects/fastr.png",
+  },
+  {
+    name: "Dashboard Purity",
+    description: `I developed this site using Nuxt.js and Tailwind CSS. It includes a variety of aesthetically pleasing user interfaces for dashboard utilities, such as charts and summaries.`,
+    link: "https://slicing-ui-purity.netlify.app/",
+    image: "/projects/dashboard-purity.png",
+  },
 ];
 
 const Projects = () => {

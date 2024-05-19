@@ -106,7 +106,10 @@ interface JobExperienceProps {
 
 const JobExperience = ({ job }: JobExperienceProps) => {
   return (
-    <div className="border py-7 px-6 border-gray-700 hover:bg-neutral-800 hover:border-neutral-800 text-white hover:text-zinc-300 transition-all duration-300 rounded-lg mt-10 md:mt-20">
+    <div
+      id="experience"
+      className="border py-7 px-6 border-gray-700 hover:bg-neutral-800 hover:border-neutral-800 text-white hover:text-zinc-300 transition-all duration-300 rounded-lg mt-10 md:mt-20"
+    >
       <div className="space-y-3 md:space-y-0 md:flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img

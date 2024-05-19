@@ -3,20 +3,24 @@ import { FaDownload } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 const navbarList = [
   {
+    name: "Home",
+    link: "home",
+  },
+  {
     name: "About Me",
-    link: "#",
+    link: "about",
   },
   {
     name: "Skills",
-    link: "#",
+    link: "skills",
   },
   {
     name: "Projects",
-    link: "#",
+    link: "projects",
   },
   {
     name: "Contact Me",
-    link: "#",
+    link: "contact-me",
   },
 ];
 const Navbar = () => {
@@ -30,7 +34,9 @@ const Navbar = () => {
 
         <ul className="hidden md:flex items-center gap-8">
           {navbarList.map((nav, index) => (
-            <li key={index}>{nav.name}</li>
+            <li key={index}>
+              <a href={`#${nav.link}`}>{nav.name}</a>
+            </li>
           ))}
         </ul>
 

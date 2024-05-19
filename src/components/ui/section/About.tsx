@@ -2,7 +2,10 @@ import { AboutIcon } from "../../icons/AboutIcon";
 
 const About = () => {
   return (
-    <section className="container gap-5 md:gap-20 grid md:grid-cols-2 py-10 md:py-14 md:px-28">
+    <section
+      id="about"
+      className="container gap-5 md:gap-20 grid md:grid-cols-2 py-10 md:py-14 md:px-28"
+    >
       <AboutIcon className="w-full h-full" />
 
       <div className="grid md:gap-5 gap-3">

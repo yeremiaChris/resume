@@ -9,3 +9,17 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#about,
+#skills,
+#projects {
+  scroll-margin-top: 80px;
+}
+
+#home {
+  scroll-margin-top: 200px;
+}

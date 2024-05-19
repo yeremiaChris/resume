@@ -23,12 +23,15 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="container md:pt-20 pt-10 flex flex-col md:items-center gap-8 md:gap-14">
+    <section
+      id="skills"
+      className="container md:pt-20 pt-10 flex flex-col md:items-center gap-8 md:gap-14"
+    >
       <h2 className="text-center text-3xl md:text-5xl">
         My <span className="font-bold">Skills</span>
       </h2>
 
-      <div className="grid grid-cols-2 gap-3 md:flex md:gap-24 items-center justify-center">
+      <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:gap-24 items-center justify-center">
         {skills.map((skill, index) => (
           <BoxSkill key={index}>
             {skill.icon}

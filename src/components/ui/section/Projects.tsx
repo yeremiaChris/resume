@@ -40,7 +40,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="bg-black py-16 mt-10 md:mt-0">
+    <section id="projects" className="bg-black py-16 mt-10 md:mt-0">
       <div className="container text-white">
         <h2 className="text-3xl md:text-5xl text-center mb-5">
           Current <span className="font-bold">Projects</span>

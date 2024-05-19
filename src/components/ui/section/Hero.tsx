@@ -5,7 +5,10 @@ import { IllustrationIcon } from "../../icons/IllustrationIcon";
 import { IllustrationMobile } from "../../icons/IllustrationMobile";
 const Hero = () => {
   return (
-    <section className="container relative flex flex-col md:flex-row justify-center items-center">
+    <section
+      id="home"
+      className="container relative flex flex-col md:flex-row justify-center items-center"
+    >
       {/* mobile */}
       <IllustrationMobile className="mb-5 w-full md:hidden" />
 

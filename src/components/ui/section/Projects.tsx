@@ -1,5 +1,6 @@
 import { FiExternalLink } from "react-icons/fi";
 import { formatNumberWithLeadingZero } from "../../../../helper/formatNumberWithLeadingZero";
+import { HTMLAttributes } from "react";
 const projects = [
   {
     name: "KiriminAja",
@@ -39,59 +40,133 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="bg-black py-16">
+    <section className="bg-black py-16 mt-10 md:mt-0">
       <div className="container text-white">
-        <h2 className="text-5xl text-center mb-5">
+        <h2 className="text-3xl md:text-5xl text-center mb-5">
           Current <span className="font-bold">Projects</span>
         </h2>
 
         {projects.map((project, index) => (
-          <div className="grid grid-cols-2 gap-10 items-center mt-10">
-            {index % 2 === 0 && (
-              <>
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="rounded-xl"
-                />
+          <>
+            <ProjectComponent
+              className="md:hidden grid md:grid-cols-2 gap-10 items-center mt-10"
+              index={index}
+              isMobile
+              project={project}
+            />
 
-                <div className="grid gap-7">
-                  <h2 className="font-bold text-5xl">
-                    {formatNumberWithLeadingZero(index + 1)}
-                  </h2>
-                  <h2 className="font-bold text-5xl">{project.name}</h2>
-                  <h2>{project.description}</h2>
-                  <a href={project.link} target="_blank">
-                    <FiExternalLink />
-                  </a>
-                </div>
-              </>
-            )}
-
-            {index % 2 !== 0 && (
-              <>
-                <div className="grid gap-7">
-                  <h2 className="font-bold text-5xl">
-                    {formatNumberWithLeadingZero(index + 1)}
-                  </h2>
-                  <h2 className="font-bold text-5xl">{project.name}</h2>
-                  <h2>{project.description}</h2>
-                  <a href={project.link} target="_blank">
-                    <FiExternalLink />
-                  </a>
-                </div>
-
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="rounded-xl"
-                />
-              </>
-            )}
-          </div>
+            <ProjectComponent
+              className="hidden md:grid md:grid-cols-2 gap-10 items-center mt-10"
+              index={index}
+              project={project}
+            />
+          </>
         ))}
       </div>
     </section>
+  );
+};
+
+// Define the type for the props
+interface Project {
+  image: string;
+  name: string;
+  description: string;
+  link: string;
+}
+interface ProjectProps extends HTMLAttributes<HTMLDivElement> {
+  project: Project;
+  index: number;
+  isMobile?: boolean;
+}
+
+const ProjectComponent: React.FC<ProjectProps> = ({
+  project,
+  index,
+  isMobile,
+  ...divProps
+}) => {
+  return (
+    <div {...divProps}>
+      {isMobile && (
+        <>
+          <img
+            src={project.image}
+            alt={project.name}
+            className="rounded-xl h-full"
+          />
+
+          <div className="grid gap-7">
+            <h2 className="font-bold text-3xl md:text-5xl">
+              {formatNumberWithLeadingZero(index + 1)}
+            </h2>
+            <h2 className="font-bold text-3xl md:text-5xl">{project.name}</h2>
+            <h2>{project.description}</h2>
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              <FiExternalLink />
+            </a>
+          </div>
+        </>
+      )}
+
+      {!isMobile && (
+        <>
+          {index % 2 === 0 && (
+            <>
+              <img
+                src={project.image}
+                alt={project.name}
+                className="rounded-xl h-full"
+              />
+
+              <div className="grid gap-7">
+                <h2 className="font-bold text-3xl md:text-5xl">
+                  {formatNumberWithLeadingZero(index + 1)}
+                </h2>
+                <h2 className="font-bold text-3xl md:text-5xl">
+                  {project.name}
+                </h2>
+                <h2>{project.description}</h2>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiExternalLink />
+                </a>
+              </div>
+            </>
+          )}
+
+          {index % 2 !== 0 && (
+            <>
+              <div className="grid gap-7">
+                <h2 className="font-bold text-3xl md:text-5xl">
+                  {formatNumberWithLeadingZero(index + 1)}
+                </h2>
+                <h2 className="font-bold text-3xl md:text-5xl">
+                  {project.name}
+                </h2>
+                <h2>{project.description}</h2>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiExternalLink />
+                </a>
+              </div>
+
+              <img
+                src={project.image}
+                alt={project.name}
+                className="rounded-xl h-full"
+              />
+            </>
+          )}
+        </>
+      )}
+    </div>
   );
 };
 

@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <h2>Yeremia</h2>
         </div>
 
-        <div className="text-right">
+        <div className="text-xs md:text-base text-right">
           <h2>@ {new Date().getFullYear()} Personal Portfolio</h2>
           <p>By Yeremia Chris Saragi</p>
         </div>

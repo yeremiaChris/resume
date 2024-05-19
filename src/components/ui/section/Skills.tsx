@@ -23,12 +23,12 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="container pt-20 flex flex-col items-center gap-14">
-      <h2 className="text-center text-5xl">
+    <section className="container md:pt-20 pt-10 flex flex-col md:items-center gap-8 md:gap-14">
+      <h2 className="text-center text-3xl md:text-5xl">
         My <span className="font-bold">Skills</span>
       </h2>
 
-      <div className="flex gap-24 flex-wrap items-center justify-center">
+      <div className="grid grid-cols-2 gap-3 md:flex md:gap-24 items-center justify-center">
         {skills.map((skill, index) => (
           <BoxSkill key={index}>
             {skill.icon}
@@ -45,7 +45,7 @@ interface BoxSkill {
 }
 
 const BoxSkill = ({ children }: BoxSkill) => (
-  <Box className="h-28 w-28 flex justify-center font-bold items-center">
+  <Box className="w-full h-full md:h-28 md:w-28 flex justify-center font-bold items-center">
     <div className="flex flex-col items-center gap-3">{children}</div>
   </Box>
 );

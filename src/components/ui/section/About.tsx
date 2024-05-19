@@ -2,13 +2,14 @@ import { AboutIcon } from "../../icons/AboutIcon";
 
 const About = () => {
   return (
-    <section className="container gap-20 grid grid-cols-2 py-14 px-28">
-      <AboutIcon />
+    <section className="container gap-5 md:gap-20 grid md:grid-cols-2 py-10 md:py-14 md:px-28">
+      <AboutIcon className="w-full h-full" />
 
-      <div className="grid gap-5">
-        <h2 className="text-5xl mb-5">
+      <div className="grid md:gap-5 gap-3">
+        <h2 className="text-3xl md:text-5xl md:mb-5">
           About <span className="font-bold">Me</span>
         </h2>
+
         <p className="text-zinc-500">
           I'm a passionate, self-proclaimed designer who specializes in frontend
           engineering, particularly with React.js, Vue.js, Next.js, Nuxt.js, and

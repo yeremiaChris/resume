@@ -86,7 +86,10 @@ const jobExperiences: JobExperience[] = [
 
 const Experience = () => {
   return (
-    <section className="bg-black md:mt-24 mt-10 py-10  md:py-24">
+    <section
+      id="experience"
+      className="bg-black md:mt-24 mt-10 py-10  md:py-24"
+    >
       <h2 className="text-center text-3xl md:text-5xl text-white">
         My <span className="font-bold">Experience</span>
       </h2>
@@ -106,10 +109,7 @@ interface JobExperienceProps {
 
 const JobExperience = ({ job }: JobExperienceProps) => {
   return (
-    <div
-      id="experience"
-      className="border py-7 px-6 border-gray-700 hover:bg-neutral-800 hover:border-neutral-800 text-white hover:text-zinc-300 transition-all duration-300 rounded-lg mt-10 md:mt-20"
-    >
+    <div className="border py-7 px-6 border-gray-700 hover:bg-neutral-800 hover:border-neutral-800 text-white hover:text-zinc-300 transition-all duration-300 rounded-lg mt-10 md:mt-20">
       <div className="space-y-3 md:space-y-0 md:flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img

@@ -16,7 +16,8 @@ html {
 
 #about,
 #skills,
-#projects {
+#projects-list,
+#experience {
   scroll-margin-top: 80px;
 }
 

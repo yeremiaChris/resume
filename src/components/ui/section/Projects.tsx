@@ -25,12 +25,6 @@ const ProjectComponent = ({
     <div {...divProps}>
       {isMobile && (
         <>
-          <img
-            src={project.image}
-            alt={project.name}
-            className="rounded-xl h-full"
-          />
-
           <div className="grid gap-7">
             <h2 className="font-bold text-3xl md:text-5xl">
               {formatNumberWithLeadingZero(index + 1)}
@@ -41,6 +35,11 @@ const ProjectComponent = ({
               <FiExternalLink />
             </a>
           </div>
+          <img
+            src={project.image}
+            alt={project.name}
+            className="rounded-xl h-full"
+          />
         </>
       )}
 

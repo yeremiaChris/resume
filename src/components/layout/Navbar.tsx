@@ -60,7 +60,7 @@ const Navbar = () => {
           </button>
 
           <a
-            href="/document/yeremia-chris-saragi-resume.pdf"
+            href="/document/cv-yeremia.pdf"
             download
             target="_blank"
             className="bg-black hidden md:flex text-white gap-3 items-center hover:bg-white hover:text-black transition-colors duration-300 hover:border-black border  py-4 px-5 rounded"

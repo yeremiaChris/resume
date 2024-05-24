@@ -1,6 +1,7 @@
 import { Location } from "react-router-dom";
 import { navbarList } from "./constant";
 import { HTMLAttributes } from "react";
+import { FaDownload } from "react-icons/fa";
 
 interface NavbarMobile extends HTMLAttributes<HTMLDivElement> {
   pathname?: Location<string>;
@@ -21,11 +22,11 @@ const NavbarMobile = ({ pathname, handleClose, ...props }: NavbarMobile) => {
             <a
               href={`#${nav.link}`}
               onClick={handleClose}
-              className={`py-6 ${
+              className={`${
                 (pathname?.hash === `#${nav.link}` ||
                   (!pathname?.hash && index === 0)) &&
                 "bg-gray-200"
-              } transition-all duration-300 relative hover:bg-gray-200 inline-block w-full`}
+              } transition-all py-6  duration-300 relative hover:bg-gray-200 inline-block w-full`}
             >
               {nav.name}
 
@@ -38,6 +39,18 @@ const NavbarMobile = ({ pathname, handleClose, ...props }: NavbarMobile) => {
             </a>
           </li>
         ))}
+
+        <li className="w-full text-center">
+          <a
+            href="/document/cv-yeremia.pdf"
+            download
+            target="_blank"
+            onClick={handleClose}
+            className="hover:bg-gray-200 flex items-center justify-center gap-3 py-6 w-full"
+          >
+            Resume <FaDownload />
+          </a>
+        </li>
       </ul>
     </nav>
   );

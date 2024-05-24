@@ -1,6 +1,7 @@
 import { FiExternalLink } from "react-icons/fi";
 import { formatNumberWithLeadingZero } from "../../../../helper/formatNumberWithLeadingZero";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 // Define the type for the props
 interface Project {
@@ -103,9 +104,15 @@ const ProjectComponent = ({
     </div>
   );
 };
+interface Project {
+  name: string;
+  description: string;
+  link: string;
+  image: string;
+}
 
 const Projects = () => {
-  const projectsData = [
+  const projectsData: Project[] = [
     {
       name: "KiriminAja",
       description:
@@ -141,9 +148,20 @@ const Projects = () => {
       image: "/projects/dashboard-purity.png",
     },
   ];
+
+  const ref = useRef(null);
+
+  const isInView = useInView(ref);
+
   return (
     <section id="projects-list" className="bg-black py-16 mt-10">
-      <div className="container text-white">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
+        transition={{ duration: 0.5 }}
+        className="container text-white"
+      >
         <h2 className="text-3xl md:text-5xl text-center mb-5">
           Current <span className="font-bold">Projects</span>
         </h2>
@@ -164,7 +182,7 @@ const Projects = () => {
             />
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,3 +1,5 @@
+import { motion, useInView } from "framer-motion";
+import { HTMLAttributes, useRef } from "react";
 interface JobExperience {
   logo: string;
   alt: string;
@@ -85,31 +87,49 @@ const jobExperiences: JobExperience[] = [
 ];
 
 const Experience = () => {
+  const ref = useRef(null);
+
+  const isInView = useInView(ref);
+
   return (
     <section
+      ref={ref}
       id="experience"
       className="bg-black md:mt-24 mt-10 py-10  md:py-24"
     >
-      <h2 className="text-center text-3xl md:text-5xl text-white">
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
+        transition={{ duration: 0.5 }}
+        className="text-center text-3xl md:text-5xl text-white"
+      >
         My <span className="font-bold">Experience</span>
-      </h2>
+      </motion.h2>
 
-      <div className="container">
+      <motion.div
+        className="container"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+      >
         {jobExperiences.map((job, index) => (
           <JobExperience key={index} job={job} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
 
-interface JobExperienceProps {
+interface JobExperienceProps extends HTMLAttributes<HTMLDivElement> {
   job: JobExperience;
 }
 
-const JobExperience = ({ job }: JobExperienceProps) => {
+const JobExperience = ({ job, ...divProps }: JobExperienceProps) => {
   return (
-    <div className="border py-7 px-6 border-gray-700 hover:bg-neutral-800 hover:border-neutral-800 text-white hover:text-zinc-300 transition-all duration-300 rounded-lg mt-10 md:mt-20">
+    <div
+      {...divProps}
+      className="border py-7 px-6 border-gray-700 hover:bg-neutral-800 hover:border-neutral-800 text-white hover:text-zinc-300 transition-all duration-300 rounded-lg mt-10 md:mt-20"
+    >
       <div className="space-y-3 md:space-y-0 md:flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img

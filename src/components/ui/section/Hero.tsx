@@ -35,12 +35,21 @@ const Hero = () => {
           </h2>
         </motion.h2>
 
-        <p className="mt-8">
+        <motion.p
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 1,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="mt-8"
+        >
           I am a passionate Frontend Web Developer with over 3 years
           <br /> of experience in crafting engaging digital experiences. <br />I
           specialize in Next.js and Nuxt.js, with a strong proficiency in
           TypeScript.
-        </p>
+        </motion.p>
 
         <div className="flex flex-wrap gap-3 md:gap-8 mt-8 md:mt-10">
           <a

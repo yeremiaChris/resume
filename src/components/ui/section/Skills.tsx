@@ -8,6 +8,8 @@ import { SiNuxtdotjs } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { SiNextui } from "react-icons/si";
 import Box from "../Box";
+import { useRef } from "react";
+import { useInView, motion } from "framer-motion";
 
 const skills = [
   { icon: <FaSquareGithub className="h-5 w-5" />, name: "Git" },
@@ -22,8 +24,16 @@ const skills = [
 ];
 
 const Skills = () => {
+  const ref = useRef(null);
+
+  const isInView = useInView(ref);
+
   return (
-    <section
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
+      transition={{ duration: 0.5 }}
       id="skills"
       className="container md:pt-20 pt-10 flex flex-col md:items-center gap-8 md:gap-14"
     >
@@ -39,7 +49,7 @@ const Skills = () => {
           </BoxSkill>
         ))}
       </div>
-    </section>
+    </motion.div>
   );
 };
 

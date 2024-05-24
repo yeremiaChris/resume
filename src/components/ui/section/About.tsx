@@ -16,7 +16,7 @@ const About = () => {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
+        transition={{ duration: 0.5 }}
         className="w-full h-full"
       >
         <AboutIcon className="w-full h-full" />
@@ -26,7 +26,7 @@ const About = () => {
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
           className="text-3xl md:text-5xl md:mb-5"
         >
           About <span className="font-bold">Me</span>

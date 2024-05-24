@@ -13,7 +13,7 @@ const Hero = () => {
       <IllustrationMobile className="mb-5 w-full md:hidden" />
 
       <div>
-        <h2 className="md:whitespace-nowrap md:leading-[56px] text-2xl md:text-5xl">
+        <h2 className="md:leading-[56px] text-2xl sm:text-3xl md:text-5xl">
           <span>Hello I’am</span> <span className="font-bold">Yeremia.</span>
           <br /> <span className="font-bold">Frontend </span>
           <span className="outline-4 text-white drop-shadow-[0_1.2px_1.2px_black]">
@@ -23,7 +23,7 @@ const Hero = () => {
           Based In Indonesia.
         </h2>
 
-        <p className="mt-8 md:whitespace-nowrap">
+        <p className="mt-8">
           I am a passionate Frontend Web Developer with over 3 years
           <br /> of experience in crafting engaging digital experiences. <br />I
           specialize in Next.js and Nuxt.js, with a strong proficiency in
@@ -61,7 +61,7 @@ const Hero = () => {
       </div>
 
       {/* desktop */}
-      <IllustrationIcon className="h-full w-full hidden md:block" />
+      <IllustrationIcon className="h-full w-1/2 hidden md:block" />
     </section>
   );
 };

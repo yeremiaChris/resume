@@ -3,6 +3,8 @@ import { MdAttachEmail } from "react-icons/md";
 import Box from "../Box";
 import { IllustrationIcon } from "../../icons/IllustrationIcon";
 import { IllustrationMobile } from "../../icons/IllustrationMobile";
+import { motion } from "framer-motion";
+
 const Hero = () => {
   return (
     <section
@@ -13,15 +15,25 @@ const Hero = () => {
       <IllustrationMobile className="mb-5 w-full md:hidden" />
 
       <div>
-        <h2 className="md:leading-[56px] text-2xl sm:text-3xl md:text-5xl">
-          <span>Hello I’am</span> <span className="font-bold">Yeremia.</span>
-          <br /> <span className="font-bold">Frontend </span>
-          <span className="outline-4 text-white drop-shadow-[0_1.2px_1.2px_black]">
-            Developer
-          </span>{" "}
-          <br />
-          Based In Indonesia.
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
+          <h2 className="md:leading-[56px] text-2xl sm:text-3xl md:text-5xl">
+            <span>Hello I’am</span> <span className="font-bold">Yeremia.</span>
+            <br /> <span className="font-bold">Frontend </span>
+            <span className="outline-4 text-white drop-shadow-[0_1.2px_1.2px_black]">
+              Developer
+            </span>{" "}
+            <br />
+            Based In Indonesia.
+          </h2>
+        </motion.h2>
 
         <p className="mt-8">
           I am a passionate Frontend Web Developer with over 3 years

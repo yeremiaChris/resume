@@ -12,7 +12,7 @@ const NavbarMobile = ({ pathname, handleClose, ...props }: NavbarMobile) => {
     <nav
       {...props}
       className={
-        "fixed text-white inset-0 top-16 bg-black z-10 " + props.className
+        "fixed inset-0 top-16 bg-gray-50 z-10  text-black" + props.className
       }
     >
       <ul className="flex flex-col overflow-auto justify-center items-center h-full">
@@ -24,10 +24,17 @@ const NavbarMobile = ({ pathname, handleClose, ...props }: NavbarMobile) => {
               className={`py-6 ${
                 (pathname?.hash === `#${nav.link}` ||
                   (!pathname?.hash && index === 0)) &&
-                "from-gray-600 to-black"
-              } transition-all duration-300 bg-gradient-to-t hover:from-gray-600 hover:to-black inline-block w-full`}
+                "bg-gray-200"
+              } transition-all duration-300 relative hover:bg-gray-200 inline-block w-full`}
             >
               {nav.name}
+
+              <div className="flex items-center justify-center absolute inset-0">
+                {(pathname?.hash === `#${nav.link}` ||
+                  (!pathname?.hash && index === 0)) && (
+                  <div className="w-10 bg-gradient-to-r from-gray-600 to-white h-1 bottom-1/2" />
+                )}
+              </div>
             </a>
           </li>
         ))}

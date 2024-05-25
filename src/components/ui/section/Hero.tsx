@@ -43,7 +43,7 @@ const Hero = () => {
             delay: 1,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-          className="mt-8"
+          className="mt-5 text-sm"
         >
           I am a passionate Frontend Web Developer with over 3 years
           <br /> of experience in crafting engaging digital experiences. <br />I
@@ -51,7 +51,7 @@ const Hero = () => {
           TypeScript.
         </motion.p>
 
-        <div className="flex flex-wrap gap-3 md:gap-8 mt-8 md:mt-10">
+        <div className="flex flex-wrap gap-3 md:gap-8 mt-5 md:mt-10">
           <a
             href="https://www.linkedin.com/in/yeremia-chris-saragi-587a671a9/"
             target="_blank"

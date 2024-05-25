@@ -154,7 +154,7 @@ const Projects = () => {
   const isInView = useInView(ref);
 
   return (
-    <section id="projects-list" className="bg-black py-16 mt-10">
+    <section id="projects-list" className="bg-black py-16">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}

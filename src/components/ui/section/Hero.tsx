@@ -4,8 +4,29 @@ import Box from "../Box";
 import { IllustrationIcon } from "../../icons/IllustrationIcon";
 import { IllustrationMobile } from "../../icons/IllustrationMobile";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Hero = () => {
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  const handleMouseMove = (
+    event: React.MouseEvent<SVGSVGElement, MouseEvent>
+  ) => {
+    if (hover) {
+      const { clientX: mouseX, clientY: mouseY, currentTarget } = event;
+      const { width, height, left, top } =
+        currentTarget.getBoundingClientRect();
+
+      const rotateY = ((mouseX - left) / width) * 40 - 20; // Rotate between -20deg to 20deg
+      const rotateX = -((mouseY - top) / height) * 40 + 20; // Rotate between -20deg to 20deg
+
+      setRotateX(rotateX);
+      setRotateY(rotateY);
+    }
+  };
+
   return (
     <section
       id="home"
@@ -82,7 +103,15 @@ const Hero = () => {
       </div>
 
       {/* desktop */}
-      <IllustrationIcon className="h-full w-1/2 hidden md:block" />
+      <IllustrationIcon
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => {
+          setHover(false);
+        }}
+        style={{ transform: `rotateY(${rotateY}deg) rotateX(${rotateX}deg)` }}
+        className="h-full w-1/2 hidden md:block"
+      />
     </section>
   );
 };

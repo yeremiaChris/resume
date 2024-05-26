@@ -29,27 +29,28 @@ const Skills = () => {
   const isInView = useInView(ref);
 
   return (
-    <motion.section
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
-      transition={{ duration: 0.5 }}
-      id="skills"
-      className="container md:pt-20 pt-10 flex flex-col md:items-center gap-8 md:gap-14"
-    >
-      <h2 className="text-center text-3xl md:text-5xl">
-        My <span className="font-bold">Skills</span>
-      </h2>
+    <section id="skills">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
+        transition={{ duration: 0.5 }}
+        className="container md:pt-20 pt-10 flex flex-col md:items-center gap-8 md:gap-14"
+      >
+        <h2 className="text-center text-3xl md:text-5xl">
+          My <span className="font-bold">Skills</span>
+        </h2>
 
-      <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:gap-24 items-center justify-center">
-        {skills.map((skill, index) => (
-          <BoxSkill key={index}>
-            {skill.icon}
-            <p>{skill.name}</p>
-          </BoxSkill>
-        ))}
-      </div>
-    </motion.section>
+        <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:gap-24 items-center justify-center">
+          {skills.map((skill, index) => (
+            <BoxSkill key={index}>
+              {skill.icon}
+              <p>{skill.name}</p>
+            </BoxSkill>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 };
 

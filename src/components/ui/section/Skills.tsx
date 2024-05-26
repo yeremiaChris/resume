@@ -29,7 +29,7 @@ const Skills = () => {
   const isInView = useInView(ref);
 
   return (
-    <motion.div
+    <motion.section
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 150 }}
@@ -49,7 +49,7 @@ const Skills = () => {
           </BoxSkill>
         ))}
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 
